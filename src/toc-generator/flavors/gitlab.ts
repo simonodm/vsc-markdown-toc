@@ -1,5 +1,4 @@
-import { Header } from "../types";
-import { FlavorConfiguration, HeaderIdFrequencyMap } from "./shared";
+import { FlavorConfiguration, Header, HeaderIdFrequencyMap } from "../types";
 
 export function createGitlabFlavorConfiguration(): FlavorConfiguration {
     return {
