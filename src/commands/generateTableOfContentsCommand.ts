@@ -1,5 +1,7 @@
 import * as vscode from 'vscode';
-import { generateTableOfContents, GeneratorConfiguration } from '../toc-generator';
+import { getFlavorConfiguration } from '../toc-generator/flavors/shared';
+import { generateTableOfContents } from '../toc-generator/generator';
+import { GeneratorConfiguration } from '../toc-generator/types';
 
 export function generateTableOfContentsCommand() {
     vscode.window.showInformationMessage('"generateTableOfContents" triggered');
@@ -20,7 +22,8 @@ function loadGeneratorConfiguration(): GeneratorConfiguration {
     const configuration = vscode.workspace.getConfiguration();
 
     return {
-        useNumberedEntries: configuration.get<boolean>('vsc-markdown-toc.useNumberedEntries') ?? true
+        useNumberedEntries: configuration.get<boolean>('vsc-markdown-toc.useNumberedEntries') ?? true,
+        flavor: getFlavorConfiguration('gitlab')
     };
 }
 

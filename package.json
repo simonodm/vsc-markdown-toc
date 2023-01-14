@@ -22,6 +22,12 @@
             "type": "boolean",
             "default": true,
             "description": "Whether the generated TOC entries should be numbered."
+          },
+          "vsc-markdown-toc.markdownFlavor": {
+            "type": "string",
+            "default": "gitlab",
+            "enum": ["gitlab"],
+            "description": "Markdown flavor to use."
           }
         }
       }
